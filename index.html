@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANTANA - Meredakan Anxiety</title>
+    <!-- Import Google Fonts: Rye untuk judul, Poppins untuk teks biasa -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rye&display=swap" rel="stylesheet">
+    <!-- Import FontAwesome untuk Icon Dummy -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ORNAMEN AWAN -->
+    <!-- <div class="ornament ornament-top-left">
+        <img src="../img/awan.png" alt="Ornamen awan kiri">
+    </div>
+    <div class="ornament ornament-top-right">
+        <img src="../img/awan.png" alt="Ornamen awan kanan">
+    </div> -->
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-nav-container">
+            <button class="header-btn" onclick="navigateTo('home')">
+                <i class="fa-solid fa-house"></i>
+            </button>
+            <span class="nav-label">Ngarepan</span>
+        </div>
+        
+        <h1 class="header-title">G a n t a n a</h1>
+        
+        <div class="header-nav-container">
+            <button class="header-btn" onclick="navigateTo('shop')">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <span class="nav-label">Toko</span>
+        </div>
+    </header>
+
+    <!-- PAGE 1: HOME -->
+    <main id="home" class="active">
+        <div class="cards-container">
+            <!-- Gladen Card
+            <div class="card card-gladen" onclick="navigateTo('gladen')">
+                <div class="card-icon">
+                    <img src="img/quiz.png" alt="Kuis">
+                </div>
+                <h2 class="card-title">Gladen</h2>
+            </div>
+             -->
+            <!-- Babagan Card -->
+            <div class="card card-babagan" onclick="navigateTo('babagan')">
+                <div class="card-icon">
+                    <img src="img/babagan.png" alt="About Us">
+                </div>
+                <h2 class="card-title">Babagan</h2>
+            </div>
+
+            <!-- Jejinis Card -->
+            <div class="card card-jejinis" onclick="navigateTo('jejinis')">
+                <div class="card-icon">
+                    <img src="img/jejenis.png" alt="Jenis produk">
+                </div>
+                <h2 class="card-title">Manca Warna</h2>
+            </div>
+
+            <!-- Quotes Card -->
+            <!-- <div class="card card-quotes" onclick="navigateTo('quotes')">
+                <div class="card-icon">
+                    <img src="img/star.png" alt="Quotes">
+                </div>
+                <h2 class="card-title">Pethikan Acak</h2>
+            </div> -->
+        </div>
+    </main>
+
+    <!-- PAGE 2: GLADEN (QUIZ) -->
+    <main id="gladen">
+        <h2 class="page-title">Gladen</h2>
+        <div class="content-box">
+            <div id="quiz-container" class="quiz-container">
+                <div class="quiz-progress" id="quiz-progress">Soal 1 dari 10</div>
+                <div class="question" id="quiz-question">Pertanyaan dimuat...</div>
+                <div class="options" id="quiz-options">
+                    <!-- Tombol opsi akan digenerate via JS -->
+                </div>
+            </div>
+            <div id="quiz-result" class="hidden" style="display: none;">
+                <h3 style="font-size: 24px; margin-bottom: 15px;">Hasil Kondisi Kamu</h3>
+                <p id="result-text" style="font-size: 18px; margin-bottom: 30px;"></p>
+                <button class="btn" onclick="startQuiz()">Ulangi Tes</button>
+                <button class="btn" onclick="navigateTo('home')" style="margin-left: 10px;">Kembali ke Ngarepan</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE 3: BABAGAN (ABOUT US) -->
+    <main id="babagan">
+        <h2 class="page-title">Babagan</h2>
+        <div class="content-box">
+            <img src="/img/babagan.png" alt="Tentang GANTANA" style="width: 190px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 20px;">Tentang GANTANA</h3>
+            <div class="desc">
+                <div class="desc-text">
+                    <p style="line-height: 1.8; text-align: justify;">
+                    <strong>GANTANA</strong>  lahir dari dua hal yang sering kita temui di sekitar kita: limbah kayu dari kerajinan dan banyaknya orang yang sering merasa cemas atau overthinking. Limbah kayu biasanya hanya dibakar atau dibuang, padahal sebenarnya masih bisa dimanfaatkan menjadi kerajinan yang bernilai. Di sisi lain, banyak remaja dan orang dewasa membutuhkan cara sederhana untuk membantu menenangkan diri saat pikiran terasa terlalu ramai.</p>
+                    <p style="line-height: 1.8; text-align: justify;">Dari situ muncul ide untuk menggabungkan kerajinan kayu dengan fungsi relaksasi. <strong>GANTANA</strong> dibuat dari limbah kayu yang diolah menjadi gantungan kunci berbentuk topeng tradisional khas Indonesia. Tidak hanya sebagai aksesoris, <strong>GANTANA</strong> juga dilengkapi botol kecil berisi ramuan tradisional seperti akar wangi, melati, kenanga, dan sedap malam yang memberikan aroma menenangkan.</p>
+                    <p style="line-height: 1.8; text-align: justify;">Dengan desain yang unik, tekstur kayu yang dapat disentuh, serta aroma alami yang bisa dihirup kapan saja, <strong>GANTANA</strong> hadir sebagai gantungan kunci kecil yang dapat menemani aktivitas sehari-hari sekaligus membantu menciptakan momen tenang di tengah kesibukan.
+                    </p>
+                    
+                </div>
+                <div class="desc-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaO_zfaGDIJ7nY4B3B89uz-XnMVq9EkUVxow&s" alt="Potongan kayu">
+                    <img src="https://www.beritamagelang.id/uploads/2022/04/626a341d7977c_1651127325.jpg" alt="Gantungan kunci">
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+
+    <!-- PAGE 4: JEJINIS (PRODUCTS) -->
+    <main id="jejinis">
+        <h2 class="page-title">Manca Warna</h2>
+        <div class="content-box">
+            <p style="margin-bottom: 30px;">Berikut adalah beberapa varian gantungan kunci GANTANA:</p>
+            <div class="products-grid">
+                <div class="product-item">
+                    <img src="img/1_kelana.png" alt="Produk 1">
+                    <h3>Gantana Kelana</h3>
+                    <p>Kuat dan berani</p>
+                    
+                    <button onclick="navigateTo('shop')" style="margin-top: 20px;">Pesan Sekarang</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/2_panji.png" alt="Produk 1">
+                    <h3>Gantana Panji</h3>
+                    <p>Murni dan berwibawa</p>
+                    <button onclick="showComingSoonPopup()" style="margin-top: 20px;">Pesan Sekarang</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/coming-soon.png" alt="Produk 1">
+                    <h3>????</h3>
+                    <p>Akan segera hadir!</p>
+                    <button onclick="showComingSoonPopup()" style="margin-top: 20px;">Coming soon</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/coming-soon.png" alt="Produk 1">
+                    <h3>????</h3>
+                    <p>Akan segera hadir!</p>
+                    <button onclick="showComingSoonPopup()" style="margin-top: 20px;">Coming soon</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE 5: 1 HARI 1 QUOTES -->
+    <main id="quotes">
+        <h2 class="page-title">Pethikan Acak</h2>
+        <div class="content-box">
+            <i class="fa-solid fa-quote-left" style="font-size: 40px; color: var(--main-color);"></i>
+            <p id="quote-text">"Klik tombol di bawah untuk mendapatkan kutipan penenang harimu."</p>
+            <p id="quote-author">- Gantana</p>
+            <button class="btn" onclick="fetchQuote()">Ambil Quotes Acak</button>
+        </div>
+    </main>
+
+    <!-- PAGE 6: SHOP -->
+    <main id="shop">
+        <h2 class="page-title">Toko</h2>
+        <div class="content-box">
+            <p style="margin-bottom: 30px; text-align: center;">Pilih platform belanja favoritmu untuk membeli GANTANA:</p>
+            <div class="shop-options">
+                <a href="https://id.shp.ee/xZzikeKU" target="_blank" class="shop-btn">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span>Belanja di Shopee</span>
+                </a>
+                <a href="#tiktokshop" target="_blank" class="shop-btn">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <span>Belanja di TikTok Shop</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div><a href="https://www.tiktok.com/@gantana.keychain" target="_blank"><i class="fa-brands fa-tiktok"></i>  @gantana.keychain</a></div>
+        <div><a href="https://www.instagram.com/gantana.keychain" target="_blank"><i class="fa-brands fa-instagram"></i>  @gantana.keychain</a></div>
+        <div><a href="https://wa.me/6282314346264" target="_blank"><i class="fa-brands fa-whatsapp"></i>  082314346264</a></div>
+    </footer>
+
+    <!-- COMING SOON MODAL POPUP -->
+    <div id="comingSoonModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeComingSoonPopup()">×</button>
+            <img src="img/babagan.png" width="160 px" alt="Coming Soon" style="margin-bottom: 15px;">
+            <h2 style="margin-bottom: 15px;">Coming Soon!</h2>
+            <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">Produk ini akan segera hadir! Terima kasih atas kesabaranmu dalam menunggu.</p>
+            <button class="btn" onclick="closeComingSoonPopup()">Tutup</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- NAVIGATION LOGIC ---
+        function navigateTo(pageId) {
+            // Sembunyikan semua page
+            document.querySelectorAll('main').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Tampilkan page yang dituju
+            document.getElementById(pageId).classList.add('active');
+
+            // Reset state jika perlu
+            if(pageId === 'gladen') startQuiz();
+            if(pageId === 'quotes') resetQuote();
+        }
+
+        // --- QUIZ LOGIC (GLADEN) ---
+        const quizQuestions = [
+            { q: "Seberapa sering kamu merasa cemas tanpa alasan yang jelas akhir-akhir ini?", options: ["Jarang", "Kadang-kadang", "Sering"] },
+            { q: "Apakah kamu mengalami kesulitan tidur atau pikiran yang terus berputar di malam hari?", options: ["Tidak", "Kadang-kadang", "Ya, sering"] },
+            { q: "Seberapa sering ototmu terasa tegang (misal: rahang kaku, bahu tegang)?", options: ["Jarang", "Kadang-kadang", "Sering"] },
+            { q: "Saat menghadapi masalah kecil, apakah kamu merasa sangat kewalahan?", options: ["Tidak", "Tergantung situasi", "Selalu"] },
+            { q: "Apakah kamu sering menghindari situasi sosial karena merasa takut dihakimi?", options: ["Tidak pernah", "Kadang-kadang", "Sering"] },
+            { q: "Seberapa sering kamu merasa jantung berdebar lebih cepat meskipun tidak sedang berolahraga?", options: ["Jarang", "Kadang-kadang", "Sering"] },
+            { q: "Apakah kamu merasa lelah secara mental meskipun tidak melakukan aktivitas fisik berat?", options: ["Tidak", "Kadang-kadang", "Ya, setiap hari"] },
+            { q: "Seberapa sering kamu mengalami 'overthinking' tentang masa lalu atau masa depan?", options: ["Jarang", "Kadang-kadang", "Hampir setiap saat"] },
+            { q: "Apakah kamu merasa sulit untuk berkonsentrasi pada pekerjaan atau tugas harian?", options: ["Tidak", "Kadang-kadang", "Sering"] },
+            { q: "Seberapa sering kamu membutuhkan 'pelarian' (tidur lama, main sosmed berjam-jam) untuk menenangkan diri?", options: ["Jarang", "Kadang-kadang", "Sangat sering"] }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').style.display = 'none';
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = quizQuestions[currentQuestion];
+            document.getElementById('quiz-progress').innerText = `Soal ${currentQuestion + 1} dari ${quizQuestions.length}`;
+            document.getElementById('quiz-question').innerText = q.q;
+            
+            const optionsDiv = document.getElementById('quiz-options');
+            optionsDiv.innerHTML = '';
+            
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'btn';
+                btn.innerText = opt;
+                // Skoring sederhana: index 0 (0 poin), index 1 (1 poin), index 2 (2 poin)
+                btn.onclick = () => answerQuestion(index);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        function answerQuestion(point) {
+            score += point;
+            currentQuestion++;
+            
+            if(currentQuestion < quizQuestions.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'block';
+            
+            let resultText = "";
+            if(score <= 6) {
+                resultText = "Mentalmu tampaknya dalam keadaan cukup stabil. Tetap pertahankan rutinitas sehatmu! Gantana bisa jadi teman santaimu.";
+            } else if(score <= 14) {
+                resultText = "Kamu mungkin sedang mengalami kecemasan ringan hingga sedang. Jangan lupa ambil napas panjang, istirahat sejenak, dan mainkan Gantana-mu.";
+            } else {
+                resultText = "Tingkat kecemasanmu sepertinya cukup tinggi. Sangat wajar untuk merasa lelah. Jika memberatkan, jangan ragu untuk mencari bantuan profesional ya. Gantana akan selalu menemani prosesmu.";
+            }
+            
+            document.getElementById('result-text').innerText = resultText;
+        }
+
+        // --- QUOTES LOGIC ---
+        const localQuotes = [
+            { text: "Tarik napas dalam-dalam. Hal ini juga akan berlalu.", author: "Gantana" },
+            { text: "Kamu tidak harus menyelesaikan semuanya hari ini.", author: "Gantana" },
+            { text: "Perasaan cemasmu nyata, tapi itu tidak mendefinisikan siapa dirimu.", author: "Gantana" },
+            { text: "Satu langkah kecil masih merupakan sebuah kemajuan.", author: "Gantana" },
+            { text: "Tidak apa-apa untuk beristirahat saat kamu merasa kewalahan.", author: "Gantana" }
+        ];
+
+        function resetQuote() {
+            document.getElementById('quote-text').innerText = "Klik tombol di bawah untuk mendapatkan kutipan penenang harimu.";
+            document.getElementById('quote-author').innerText = "- Gantana";
+        }
+
+        async function fetchQuote() {
+            const quoteTextEl = document.getElementById('quote-text');
+            const quoteAuthorEl = document.getElementById('quote-author');
+            
+            quoteTextEl.innerText = "Mengambil kutipan...";
+            quoteAuthorEl.innerText = "";
+
+            try {
+                // Menggunakan API public dummyjson untuk quotes
+                const response = await fetch('https://dummyjson.com/quotes/random');
+                if(!response.ok) throw new Error('API down');
+                
+                const data = await response.json();
+                quoteTextEl.innerText = `"${data.quote}"`;
+                quoteAuthorEl.innerText = `- ${data.author}`;
+            } catch (error) {
+                // Fallback jika API gagal/offline (memakai quote lokal bahasa indonesia)
+                const randomLocal = localQuotes[Math.floor(Math.random() * localQuotes.length)];
+                quoteTextEl.innerText = `"${randomLocal.text}"`;
+                quoteAuthorEl.innerText = `- ${randomLocal.author}`;
+            }
+        }
+
+        // --- COMING SOON POPUP LOGIC ---
+        function showComingSoonPopup() {
+            document.getElementById('comingSoonModal').classList.remove('hidden');
+        }
+
+        function closeComingSoonPopup() {
+            document.getElementById('comingSoonModal').classList.add('hidden');
+        }
+
+        // Tutup modal jika klik di luar content
+        window.onclick = function(event) {
+            const modal = document.getElementById('comingSoonModal');
+            if (event.target == modal) {
+                modal.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

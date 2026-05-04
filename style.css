@@ -1,0 +1,587 @@
+:root {
+            --bg-color: #feefd0;
+            --main-color: #664343;
+            --card-bg: #fffcf5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        @font-face {
+            font-family: 'EFCO Brookshire';
+            src: url('fonts/efco-brookshire.woff2') format('woff2'),
+                url('fonts/efco-brookshire.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--main-color);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            /* Efek glow radial di tengah seperti gambar */
+            background: radial-gradient(circle at center, #ffffff 0%, var(--bg-color) 70%);
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-shadow: rgb(157, 157, 157) 0px 4px 6px 1px;
+             /* Tambahkan bayangan untuk efek mengambang */
+            position: relative; /* Wajib untuk z-index bekerja */
+            z-index: 1000; /* Pastikan header berada di atas elemen lain */
+            position:sticky;
+            top:0;
+        }
+
+        .header-btn {
+            color: var(--main-color);
+            background-color: var(--bg-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.3s;
+            flex-direction: column;
+        }
+
+        .header-btn:hover {
+            transform: scale(1.1);
+        }
+
+        header{
+            font-family: 'EFCO Brookshire', serif;
+            font-size: 30px;
+            letter-spacing: 8px;
+            color: var(--bg-color);
+            background-color: var(--main-color);
+            text-shadow: 2px 2px 4px rgba(142, 65, 37, 0.2);
+        }
+
+        .header-nav-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-label {
+            font-family: 'EFCO Brookshire', serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex: 1;
+            display: none; /* Sembunyikan semua page by default */
+            padding: 40px;
+            animation: fadeIn 0.5s ease-in-out;
+
+            position: relative; /* Wajib ada */
+            z-index: 1;
+        }
+
+        main::before{
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0; /* Memenuhi wadah utama */
+            background-image: radial-gradient(circle at center bottom, rgba(15, 11, 1, 0.866) 0%, transparent 40%), url('https://i0.wp.com/zaloraadmin.wpcomstaging.com/wp-content/uploads/2024/05/5-motif-batik-yang-mudah-digambar.png?fit=1200%2C620&ssl=1');
+            /* background-size: cover; */
+            background-size: 250px;
+            background-repeat: repeat;
+            background-position: center;
+            
+            opacity: 0.14; /* Di sinilah Anda mengatur transparansi gambarnya (0.0 sampai 1.0) */
+            z-index: -1;  /* Mendorong gambar ke belakang teks */
+
+        }
+
+        main.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HOME CARDS LAYOUT */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 2px dashed var(--main-color);
+            border-radius: 20px;
+            width: 220px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 15px;
+            align-items: center;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(142, 65, 37, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotate(0deg) !important;
+            box-shadow: 5px 15px 15px rgba(243, 209, 105, 0.794);
+            background-color: #fff3a3;
+        }
+
+        /* Rotasi spesifik masing-masing kartu seperti di gambar */
+        .card-gladen { transform: rotate(-12deg); margin-top: 20px;}
+        .card-babagan { transform: rotate(-4deg); margin-bottom: 20px;}
+        .card-jejinis { transform: rotate(4deg); margin-bottom: 20px;}
+        .card-quotes { transform: rotate(12deg); margin-top: 20px;}
+
+        .card img {
+            width: 150px;
+            height: auto;
+            font-size: 80px;    
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-family: 'EFCO Brookshire', serif;
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        /* PAGE STYLES (General) */
+        .page-title {
+            font-family: 'EFCO Brookshire', serif;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content-box {
+            background-color: var(--card-bg);
+            border: 2px dashed var(--main-color);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* WADAH UTAMA (FLEX CONTAINER) */
+        .content-box .desc {
+            display: flex;
+            flex-direction: row; /* Berjejer ke samping */
+            gap: 30px;
+            
+        }
+
+        /* KOLOM 1: TEKS (RASIO 2) */
+        .desc .desc-text {
+            flex: 2; /* Mengambil 2 bagian ruang */
+        }
+
+        /* KOLOM 2: GAMBAR (RASIO 1) */
+        .desc .desc-img {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1; /* Mengambil 1 bagian ruang */
+            width: 100%;
+            padding: 10px; 
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover; /* Mencegah gambar menjadi gepeng atau melar */
+        }
+
+        .desc .desc-img img {
+            width: 100%; /* Memaksa gambar menyesuaikan lebar wadah (.desc-img) */
+            height: auto; 
+            border-radius: 5px; /* Biar ujungnya melengkung */
+            object-fit: cover; /* Biar gambarnya gak gepeng */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: tambah bayangan tipis */
+        }
+
+        /* Opsional: Membuatnya responsif (menumpuk ke bawah) di layar HP */
+        @media (max-width: 768px) {
+            .content-box .desc {
+                flex-direction: column;
+            }
+        }
+
+        /* QUIZ (GLADEN) STYLES */
+        .quiz-container {
+            text-align: left;
+        }
+        .question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .btn {
+            background-color: transparent;
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+        }
+        .quiz-progress {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #b56a4d;
+        }
+
+        /* JEJINIS (PRODUCTS) STYLES */
+
+        .content-box .products-grid{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        
+        }
+        .product-item {
+            border: 1px solid var(--main-color);
+            padding: 20px;
+            border-radius: 15px;
+            width: 200px;
+        }
+        .product-item img {
+            width: 120px;
+            margin-bottom: 15px;
+        }
+
+        .product-item p{
+            font-size: 14px;
+        }
+
+        .product-item button{
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 7px 20px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        /* QUOTES STYLES */
+        #quote-text {
+            font-size: 24px;
+            font-style: italic;
+            margin: 30px 0;
+            line-height: 1.5;
+            min-height: 100px;
+        }
+        #quote-author {
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+            font-family: 'EFCO Brookshire', serif;;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-top: auto;
+            position: sticky;
+            bottom: 0;
+            z-index: 1000;
+        }
+
+        a{
+            color: var(--bg-color);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .header-title { font-size: 32px; }
+            .cards-container { flex-direction: column; align-items: center; }
+            .card { transform: none !important; margin: 10px 0 !important; width: 80%; height: 200px; flex-direction: row;}
+            .card-icon { font-size: 50px; }
+            footer { flex-direction: column; align-items: center; gap: 10px; text-align: center;}
+            header { padding: 15px; }
+        }
+
+        @media (max-width: 500px) {
+            header {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 15px 20px;
+                gap: 10px;
+            }
+
+            header .header-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+                letter-spacing: 6px;
+                order: 1;
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+
+            header .header-nav-container {
+                order: 2;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                width: auto;
+            }
+
+            header .header-nav-container .header-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            header .header-nav-container .nav-label {
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+            }
+
+            .card {
+                flex-direction: column; /* INI KUNCINYA: Mengubah posisi ke bawah */
+                text-align: center;    /* Agar teks berada di tengah di bawah gambar */
+                gap: 10px;
+            }
+
+            .card-icon img {
+                width: 80px; /* Sesuaikan ukuran gambar mobile */
+                height: auto;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+
+            /* Responsive pop up */
+            .modal-content {
+                width: 80%;
+                max-width: 300px;
+                padding: 20px;
+            }
+        }
+
+        /* MODAL POPUP STYLES */
+        .modal {
+            display: flex !important;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+}
+
+        .modal.hidden {
+            display: none !important;
+            opacity: 0;
+            pointer-events: none;
+}
+
+        .modal-content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: slideIn 0.3s ease-out;
+}
+
+        .modal-close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.2s;
+}
+
+        .modal-close:hover {
+            color: #333;
+}
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ORNAMEN AWAN */
+        .ornament {
+            position: fixed;
+            z-index: 2; /* Tingkatkan z-index agar di atas background */
+            pointer-events: none;
+            margin: 0;
+        }
+
+        .ornament img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 1;
+            /* Hapus background-color jika ada */
+        }
+
+        .ornament-top-left {
+            top: 85px;
+            left: 0;
+            width: 200px;
+            height: 150px;
+            animation: floatLeft 6s ease-in-out infinite;
+        }
+
+        .ornament-top-left img {
+            transform: scaleX(-1); /* Balik gambar horizontal */
+        }
+
+        .ornament-top-right {
+            top: 85px;
+            right: 0;
+            width: 200px;
+            height: 150px;
+            animation: floatRight 6s ease-in-out infinite;
+        }
+
+        @keyframes floatLeft {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes floatRight {
+            0%, 100% {
+                transform: translateY(10px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* RESPONSIVE ORNAMEN */
+        @media (max-width: 768px) {
+            .ornament-top-left,
+            .ornament-top-right {
+                width: 120px;
+                height: 90px;
+                top: 80px;
+            }
+        }
+
+        /* SHOP STYLES */
+        .shop-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .shop-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--card-bg);
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: 300px;
+            justify-content: center;
+        }
+        .shop-btn:hover {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            transform: translateY(-5px);
+        }
+        .shop-btn i {
+            font-size: 24px;
+        }
